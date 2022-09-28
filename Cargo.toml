@@ -1,6 +1,6 @@
 [package]
 name = "package_name"
-version = "0.0.0"
+version = "0.0.1"
 authors = ["FlareFlo <mail@flareflo.dev>"]
 description = "Creates constants for project metadata"
 keywords = ["template", "proc_macro", "procmacro"]
