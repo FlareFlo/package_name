@@ -1,7 +1,6 @@
-extern crate proc_macro;
-use proc_macro::TokenStream;
+use proc_macro::{TokenStream};
+use quote::quote;
 use std::fs;
-use std::str::FromStr;
 use cargo_toml::Manifest;
 
 
@@ -14,5 +13,9 @@ pub fn package_name(_input: TokenStream) -> TokenStream {
 
     let name = manifest.package.unwrap().name;
 
-  TokenStream::from_str(&format!("pub const PACKAGE_NAME: &str = \"{}\";", name)).unwrap()
+    let res = quote!(
+        pub const PACKAGE_NAME: &str = stringify!(#name);
+    );
+
+    res.into()
 }
