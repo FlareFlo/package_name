@@ -11,8 +11,8 @@ use quote::quote;
 ///
 /// [1]: https://doc.rust-lang.org/reference/procedural-macros.html#function-like-procedural-macros
 #[proc_macro]
-pub fn package_name(input: TokenStream) -> TokenStream {
-    let parsed = parse_macro_input!(input as DeriveInput);
+pub fn package_name(_input: TokenStream) -> TokenStream {
+    // let parsed = parse_macro_input!(input as DeriveInput);
     let toml = fs::read("Cargo.toml").unwrap();
 
     let manifest = Manifest::from_slice(&toml).unwrap();
