@@ -7,6 +7,7 @@ description = "Creates constants for project metadata"
 keywords = ["template", "proc_macro", "procmacro"]
 edition = "2021"
 license = "MIT"
+readme = "readme.md"
 
 [lib]
 proc-macro = true
