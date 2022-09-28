@@ -19,5 +19,5 @@ pub fn package_name(_input: TokenStream) -> TokenStream {
 
     let name = manifest.package.unwrap().name;
 
-  TokenStream::from_str(&format!("pub const PACKAGE_NAME: &str = {};", name)).unwrap()
+  TokenStream::from_str(&format!("pub const PACKAGE_NAME: &str = \"{}\";", name)).unwrap()
 }
